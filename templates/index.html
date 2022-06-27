@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+</header>
+<div class="task-form">
+    <form method="POST">
+        <label for="name">Task name: </label>
+        <input id="name" type="text" name="name" value="">
+        <br>
+        <label for="description">Task description: </label>
+        <input id="description" type="text" name="description" value="">
+        <br>
+        <input type="button" value="Submit" class="submit">
+    </form>
+</div>
+
+{% verbatim %}
+<div class="tasks">
+</div>
+{% endverbatim %}
+
+<script src="{% static 'js/load_tasks1.js' %}" defer></script>
+
+</body>
+</html>

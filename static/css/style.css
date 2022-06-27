@@ -1,0 +1,15 @@
+.task-form {
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    width: 700px;
+}
+
+
+.task {
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    width: 700px;
+    background-color: gray;
+}

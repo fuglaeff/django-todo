@@ -3,24 +3,31 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-TASK_STATUS = (
-    (0, 'created',),
-    (1, 'active',),
-    (2, 'completed',),
-)
-
 
 class Task(models.Model):
+    CREATED = 0
+    ACTIVE = 1
+    COMPLETED = 2
+
+    TASK_STATUS = (
+        (CREATED, 'created',),
+        (ACTIVE, 'active',),
+        (COMPLETED, 'completed',),
+    )
+
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=500)
     created_dt = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=TASK_STATUS)
+    status = models.IntegerField(choices=TASK_STATUS, null=True)
     user = models.ForeignKey(
         User,
         on_delete=models.SET_NULL,
         null=True,
         related_name='created_tasks'
     )
+
+    class Meta:
+        ordering = ('-created_dt', )
 
 
 class Point(models.Model):
