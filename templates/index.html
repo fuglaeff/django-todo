@@ -12,11 +12,20 @@
 <div class="task-form">
     <form method="POST">
         <label for="name">Task name: </label>
+        <br>
         <input id="name" type="text" name="name" value="">
         <br>
         <label for="description">Task description: </label>
-        <input id="description" type="text" name="description" value="">
         <br>
+        <input id="description" type="text" name="description" value="">
+            <div class="points-fields">
+                <input type="text" name="points_cnt" value="1" style="display: none;">
+                <label>Points: </label>
+                <br>
+                <input type="text" name="point_0">
+                <br>
+                <input type="button" value="Add point" class="add-new-point">
+            </div>
         <input type="button" value="Submit" class="submit">
     </form>
 </div>
@@ -26,7 +35,7 @@
 </div>
 {% endverbatim %}
 
-<script src="{% static 'js/load_tasks1.js' %}" defer></script>
+<script src="{% static 'js/load_tasks.js' %}" defer></script>
 
 </body>
 </html>
